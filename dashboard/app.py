@@ -14,9 +14,12 @@ st.set_page_config(
 )
 
 # ── Load model ───────────────────────────────────────────────
+from pathlib import Path
+
 @st.cache_resource
 def load_model():
-    with open("../src/best_model.pkl", "rb") as f:
+    model_path = Path(__file__).parent.parent / "src" / "best_model.pkl"
+    with open(model_path, "rb") as f:
         return pickle.load(f)
 
 model = load_model()
@@ -25,7 +28,8 @@ explainer = shap.TreeExplainer(model)
 # ── Load data ─────────────────────────────────────────────────
 @st.cache_data
 def load_data():
-    df = pd.read_csv("../data/WA_Fn-UseC_-HR-Employee-Attrition.csv")
+    data_path = Path(__file__).parent.parent / "data" / "WA_Fn-UseC_-HR-Employee-Attrition.csv"
+    df = pd.read_csv(data_path)
     return df
 
 df_raw = load_data()
