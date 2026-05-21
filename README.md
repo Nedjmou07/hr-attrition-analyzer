@@ -67,6 +67,9 @@ hr-attrition-analyzer/
 
 ## 📱 Dashboard Pages
 
+## 🚀 Live Demo
+👉 [https://hr-attrition-analyzer-k4scdkffsavx2pcj9affgs.streamlit.app/]
+
 ### 🏠 Overview
 High-level KPIs and visual insights — attrition by department, income distribution, tenure patterns.
 
@@ -125,7 +128,7 @@ Built by Agti Nedjemeddine — Data Scientist specializing in predictive analyti
 
 - LinkedIn: [https://www.linkedin.com/in/nedjemeddine-agti-072662316/]
 - GitHub: [https://github.com/Nedjmou07]
-- Email: agtinedjmeddine2021.com
+- Email: agtinedjmeddine2021@gmail.com
 
 ---
 
