@@ -14,13 +14,15 @@ st.set_page_config(
 )
 
 # ── Load model ───────────────────────────────────────────────
+from catboost import CatBoostClassifier
 from pathlib import Path
 
 @st.cache_resource
 def load_model():
-    model_path = Path(__file__).parent.parent / "src" / "best_model.pkl"
-    with open(model_path, "rb") as f:
-        return pickle.load(f)
+    model = CatBoostClassifier()
+    model_path = Path(__file__).parent.parent / "src" / "best_model.cbm"
+    model.load_model(str(model_path))
+    return model
 
 model = load_model()
 explainer = shap.TreeExplainer(model)
